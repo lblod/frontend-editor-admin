@@ -1,0 +1,71 @@
+{{!-- Page to show details of editor-documents --}}
+<div class="details">
+  <h2 class="title">{{t (humanize 'editor-document details')}}</h2>
+
+  {{!--
+    Actions to go back to the list-view or edit editor-document
+    if it's an editable application.
+  --}}
+  <div class="actions">
+    {{#link-to "editor-documents" class="btn back" title="Return to list" tagName='button'}}Return to the list{{/link-to}}
+    {{#link-to "editor-documents.edit" model class="btn edit" title="Edit this item" tagName="button"}}Edit{{/link-to}}
+  </div>
+
+  {{!-- Table to show details of editor-document. --}}
+  <table>
+    <thead>
+      <tr>
+        <th>{{t "Attribute"}}</th>
+        <th>{{t "Data"}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{!-- Creating row for id --}}
+      <tr>
+        <td class="properties__label">{{t "id"}}</td>
+        {{handle-attribute model=model attribute='id' tagName='td' classes='properties__data'}}
+      </tr>
+      {{!-- Creating rows for attributes depending on the type of property --}}
+            <tr>
+        <td>{{t 'title'}}</td>
+        {{handle-attribute model=model attribute='title' tagName='td' classes='properties__data'}}
+      </tr>
+      <tr>
+        <td>{{t 'content'}}</td>
+        {{handle-attribute model=model attribute='content' tagName='td' classes='properties__data'}}
+      </tr>
+      <tr>
+        <td>{{t 'context'}}</td>
+        {{handle-attribute model=model attribute='context' tagName='td' classes='properties__data'}}
+      </tr>
+      <tr>
+        <td>{{t 'createdOn'}}</td>
+        {{handle-date model=model attribute='createdOn' tagName='td' classes='properties__data' timePicker=true}}
+      </tr>
+      <tr>
+        <td>{{t 'starred'}}</td>
+        <td>{{handle-attribute model=model attribute='starred' classes='checkbox' boolean=true}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'origin'}}</td>
+        {{handle-attribute model=model attribute='origin' tagName='td' classes='properties__data'}}
+      </tr>
+      <tr>
+        <td class="properties__label">{{t 'status'}}</td>
+       {{display-model-belongsto-relationship model=model.status itemRoute='editor-document-statuses.show' configuredLabel='stringRep' tagName="td" classes="properties__data"}}
+      </tr>
+      <tr>
+        <td class="properties__label">{{t 'previousVersion'}}</td>
+       {{display-model-belongsto-relationship model=model.previousVersion itemRoute='editor-documents.show' configuredLabel='stringRep' tagName="td" classes="properties__data"}}
+      </tr>
+      <tr>
+        <td class="properties__label">{{t 'nextVersion'}}</td>
+       {{display-model-belongsto-relationship model=model.nextVersion itemRoute='editor-documents.show' configuredLabel='stringRep' tagName="td" classes="properties__data"}}
+      </tr>
+      <tr>
+        <td class="properties__label">{{t 'zitting'}}</td>
+        {{display-model-belongsto-relationship model=model.zitting itemRoute='zittingen.show' configuredLabel='stringRep' tagName="td" classes="properties__data"}}
+      </tr>
+    </tbody>
+  </table>
+</div>

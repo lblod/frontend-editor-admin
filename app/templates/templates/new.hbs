@@ -1,0 +1,46 @@
+{{!-- Page to create a new template --}}
+<div class="new">
+  <h2 class="title">{{t (humanize 'New template')}}</h2>
+
+  {{!--
+    Actions to save new template
+    or delete new template.
+  --}}
+  <div class="actions">
+    <button type="button" class="btn save" title="Save new template" {{action 'save' model}}>Save</button>
+    <button type="button" class="btn cancel" title="Cancel" {{action 'cancel' model}}>Cancel</button>
+  </div>
+
+  {{!-- Table to show details of template. --}}
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Data</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{!-- Creating rows for attributes depending on the type of property --}}
+            <tr>
+        <td>title</td>
+<td align='middle'>{{handle-attribute model=model attribute='title' editable=true}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'matches'}}</td>
+        <td align='middle'>{{edit-string-set data=model.matches tagName='ul' classes='string-set'}}</td>
+      </tr>
+      <tr>
+        <td>body</td>
+        <td align='middle'>{{textarea value=model.body placeholder='body' rows=6 cols=80}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'contexts'}}</td>
+        <td align='middle'>{{edit-string-set data=model.contexts tagName='ul' classes='string-set'}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'disabledInContexts'}}</td>
+        <td align='middle'>{{edit-string-set data=model.disabledInContexts tagName='ul' classes='string-set'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

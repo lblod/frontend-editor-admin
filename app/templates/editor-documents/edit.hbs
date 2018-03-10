@@ -1,0 +1,59 @@
+{{!-- Page to edit editor-document --}}
+{{#with (changeset model skipValidate=true) as |changeset|}}
+<div class="edit">
+  <h2 class="title">{{t (humanize 'Edit editor-document')}}</h2>
+
+  {{!--
+    Actions to save or cancel changes;
+    or delete editor-document.
+  --}}
+  <div class="actions">
+    <button type="button" class="btn save" title="Save new editor-document" {{action 'save' changeset model}}>Save</button>
+    <button type="button" class="btn cancel" title="Cancel" {{action 'cancel' changeset model}}>Cancel</button>
+    <button type="button" class="btn delete" title="Delete this item" {{action 'delete' changeset model}}>Delete</button>
+  </div>
+
+  {{!-- Table to show details of editor-document. --}}
+  <table>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Data</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{!-- Creating rows for attributes depending on the type of property --}}
+            <tr>
+      <td>title</td>
+      <td align='middle'>{{handle-attribute model=changeset attribute='title' editable=true}}</td>
+</tr>
+      <tr>
+      <td>content</td>
+      <td align='middle'>{{handle-attribute model=changeset attribute='content' editable=true}}</td>
+</tr>
+      <tr>
+      <td>context</td>
+      <td align='middle'>{{handle-attribute model=changeset attribute='context' editable=true}}</td>
+</tr>
+      <tr>
+      <td>createdOn</td>
+      <td align='middle'>{{handle-date model=changeset attribute='createdOn' editable=true timePicker=true}}</td>
+</tr>
+      <tr>
+        <td>{{t 'starred'}}</td>
+        <td>{{handle-attribute model=model attribute='starred' classes='checkbox' editable=true boolean=true}}</td>
+      </tr>
+      <tr>
+      <td>origin</td>
+      <td align='middle'>{{handle-attribute model=changeset attribute='origin' editable=true}}</td>
+</tr>
+
+        <tr><td>status</td><td align='middle'>{{edit-belongs-to relName=changeset.status relType="editor-document-status"}}</td></tr>
+      <tr><td>previousVersion</td><td align='middle'>{{edit-belongs-to relName=changeset.previousVersion relType="editor-document"}}</td></tr>
+      <tr><td>nextVersion</td><td align='middle'>{{edit-belongs-to relName=changeset.nextVersion relType="editor-document"}}</td></tr>
+      <tr><td>zitting</td><td align='middle'>{{edit-belongs-to relName=changeset.zitting relType="zitting"}}</td></tr>
+
+    </tbody>
+  </table>
+</div>
+{{/with}}

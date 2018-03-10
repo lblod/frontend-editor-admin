@@ -1,0 +1,54 @@
+{{!-- Page to create a new editor-document --}}
+<div class="new">
+  <h2 class="title">{{t (humanize 'New editor-document')}}</h2>
+
+  {{!--
+    Actions to save new editor-document
+    or delete new editor-document.
+  --}}
+  <div class="actions">
+    <button type="button" class="btn save" title="Save new editor-document" {{action 'save' model}}>Save</button>
+    <button type="button" class="btn cancel" title="Cancel" {{action 'cancel' model}}>Cancel</button>
+  </div>
+
+  {{!-- Table to show details of editor-document. --}}
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Data</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{!-- Creating rows for attributes depending on the type of property --}}
+            <tr>
+        <td>title</td>
+<td align='middle'>{{handle-attribute model=model attribute='title' editable=true}}</td>
+      </tr>
+      <tr>
+        <td>content</td>
+<td align='middle'>{{handle-attribute model=model attribute='content' editable=true}}</td>
+      </tr>
+      <tr>
+        <td>context</td>
+<td align='middle'>{{handle-attribute model=model attribute='context' editable=true}}</td>
+      </tr>
+      <tr>
+        <td>createdOn</td>
+<td align='middle'>{{handle-date model=model attribute='createdOn' editable=true timePicker=true}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'starred'}}</td>
+        <td>{{handle-attribute model=model attribute='starred' classes='checkbox' editable=true boolean=true}}</td>
+      </tr>
+      <tr>
+        <td>origin</td>
+<td align='middle'>{{handle-attribute model=model attribute='origin' editable=true}}</td>
+      </tr>
+      <tr><td>status</td><td align='middle'>{{edit-belongs-to relName=model.status relType="editor-document-status"}}</td></tr>
+      <tr><td>previousVersion</td><td align='middle'>{{edit-belongs-to relName=model.previousVersion relType="editor-document"}}</td></tr>
+      <tr><td>nextVersion</td><td align='middle'>{{edit-belongs-to relName=model.nextVersion relType="editor-document"}}</td></tr>
+      <tr><td>zitting</td><td align='middle'>{{edit-belongs-to relName=model.zitting relType="zitting"}}</td></tr>
+    </tbody>
+  </table>
+</div>

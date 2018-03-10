@@ -1,0 +1,43 @@
+{{!-- Page to list templates --}}
+<div class="content">
+  <h2 class="title">{{t (humanize 'templates')}}</h2>
+  <div class="actions">{{#link-to "templates.new" class="btn new" title="Create new item" tagName="button" }}Create{{/link-to}}</div>
+  {{#if model}}
+    <table>
+      <thead>
+        <tr>
+          <th class="properties__label">id</th>
+          {{sortable-table-header attribute="title" currentSort=sort}}
+{{sortable-table-header attribute="matches" currentSort=sort}}
+{{sortable-table-header attribute="body" currentSort=sort}}
+{{sortable-table-header attribute="contexts" currentSort=sort}}
+{{sortable-table-header attribute="disabledInContexts" currentSort=sort}}
+
+
+
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model as |item|}}
+          {{#link-to "templates.show" item tagName='tr' }}
+              <td>{{handle-attribute model=item attribute='id' classes='properties__data'}}</td>
+            {{handle-attribute model=item attribute='title' tagName='td' classes='properties__data'}}
+              <td>{{display-attribute-string-set model=item attribute='matches' tagName='ul' innerTagName='li' classes='string-set'}}</td>
+              {{handle-attribute model=item attribute='body' tagName='td' classes='properties__data'}}
+              <td>{{display-attribute-string-set model=item attribute='contexts' tagName='ul' innerTagName='li' classes='string-set'}}</td>
+              <td>{{display-attribute-string-set model=item attribute='disabledInContexts' tagName='ul' innerTagName='li' classes='string-set'}}</td>
+          {{/link-to}}
+        {{/each}}
+      </tbody>
+    </table>
+
+    {{#if model.meta.pagination}}
+      {{pagination-component page=page numberOfItems=model.length total=model.meta.count links=model.meta.pagination}}
+    {{/if}}
+  {{else}}
+    <div class="empty">
+      No {{t (humanize 'templates')}} in the database.
+      Click on the <i class="fa fa-plus" aria-hidden="true"></i> button to create a new {{t (humanize "template")}}.
+    </div>
+  {{/if}}
+</div>

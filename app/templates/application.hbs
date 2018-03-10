@@ -1,0 +1,13 @@
+<div id="ember-basic-dropdown-wormhole"></div>
+{{!-- Basic view with navbar, menu on the left and content on the right. --}}
+<div class="navbar">
+  {{#link-to "index" tagName="h1" class="title" }}
+    LBLOD Admin
+  {{/link-to}}
+  <div class="navigation-menu">
+    {{navigation-menu}}
+  </div>
+</div>
+<div class="main-content">
+  {{outlet}}
+</div>

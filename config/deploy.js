@@ -12,13 +12,13 @@ module.exports = function(deployTarget) {
     'ssh-index': {
       username: 'root',
       host: 'dock.semte.ch',
-      remoteDir: '/data/lblod/dev-lblod-apis/admin-app',
+      remoteDir: '/data/lblod/dev-demo-editor/admin-app',
       agent: process.env.SSH_AUTH_SOCK,
       port: 2275,
       allowOverwrite: true
     },
     'rsync': {
-      dest: '/data/lblod/dev-lblod-apis/admin-app',
+      dest: '/data/lblod/dev-demo-editor/admin-app',
       username: 'root',
       host: 'dock.semte.ch',
       port: 2275,
@@ -33,14 +33,14 @@ module.exports = function(deployTarget) {
     ENV['ssh-index'] = {
       username: 'root',
       host: 'dock.semte.ch',
-      remoteDir: '/data/lblod/lblod-apis/admin-app',
+      remoteDir: '/data/lblod/demo-editor/admin-app',
       agent: process.env.SSH_AUTH_SOCK,
       port: 2275,
       allowOverwrite: true
     };
 
     ENV['rsync'] = {
-      dest: '/data/lblod/lblod-apis/admin-app',
+      dest: '/data/lblod/demo-editor/admin-app',
       username: 'root',
       host: 'dock.semte.ch',
       port: 2275,

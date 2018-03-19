@@ -1,16 +1,16 @@
 {
-  "name": "frontend-resource-editor",
+  "name": "frontend-editor-admin",
   "version": "0.1.1",
   "private": true,
   "description": "LBLOD Admin application",
-  "author": "",
+  "author": "info@redpencil.io",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lblod/frontend-resource-editor.git"
+    "url": "git+https://github.com/lblod/frontend-editor-admin.git"
   },
   "scripts": {
     "build": "ember build",

@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'frontend-resource-editor',
+    modulePrefix: 'frontend-editor-admin',
     environment,
     rootURL: '/',
     locationType: 'auto',

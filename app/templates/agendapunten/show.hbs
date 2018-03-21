@@ -47,12 +47,12 @@
         <td>{{display-attribute-string-set model=model attribute='type' tagName='ul' innerTagName='li' classes='string-set'}}</td>
       </tr>
       <tr>
-        <td class="properties__label">{{t 'agenda'}}</td>
-        {{display-model-belongsto-relationship model=model.agenda itemRoute='agendas.show' configuredLabel='stringRep' tagName="td" classes="properties__data"}}
-      </tr>
-      <tr>
         <td class="properties__label">{{t 'vorigeAgendapunt'}}</td>
        {{display-model-belongsto-relationship model=model.vorigeAgendapunt itemRoute='agendapunten.show' configuredLabel='stringRep' tagName="td" classes="properties__data"}}
+      </tr>
+      <tr>
+        <td class="properties__label">{{t 'agenda'}}</td>
+       {{display-model-belongsto-relationship model=model.agenda itemRoute='agendas.show' configuredLabel='stringRep' tagName="td" classes="properties__data"}}
       </tr>
       <tr>
         <td class="properties__label">{{t 'referenties'}}</td>

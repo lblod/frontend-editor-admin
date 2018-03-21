@@ -13,8 +13,8 @@
 {{sortable-table-header attribute="contexts" currentSort=sort}}
 {{sortable-table-header attribute="disabledInContexts" currentSort=sort}}
 
-
-
+          
+          
         </tr>
       </thead>
       <tbody>
@@ -22,10 +22,12 @@
           {{#link-to "templates.show" item tagName='tr' }}
               <td>{{handle-attribute model=item attribute='id' classes='properties__data'}}</td>
             {{handle-attribute model=item attribute='title' tagName='td' classes='properties__data'}}
-              <td>{{display-attribute-string-set model=item attribute='matches' tagName='ul' innerTagName='li' classes='string-set'}}</td>
-              {{handle-attribute model=item attribute='body' tagName='td' classes='properties__data'}}
-              <td>{{display-attribute-string-set model=item attribute='contexts' tagName='ul' innerTagName='li' classes='string-set'}}</td>
-              <td>{{display-attribute-string-set model=item attribute='disabledInContexts' tagName='ul' innerTagName='li' classes='string-set'}}</td>
+            <td>{{display-attribute-string-set model=item attribute='matches' tagName='ul' innerTagName='li' classes='string-set'}}</td>
+            {{handle-attribute model=item attribute='body' tagName='td' classes='properties__data'}}
+            <td>{{display-attribute-string-set model=item attribute='contexts' tagName='ul' innerTagName='li' classes='string-set'}}</td>
+            <td>{{display-attribute-string-set model=item attribute='disabledInContexts' tagName='ul' innerTagName='li' classes='string-set'}}</td>
+
+
           {{/link-to}}
         {{/each}}
       </tbody>

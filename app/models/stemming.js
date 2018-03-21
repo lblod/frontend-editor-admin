@@ -1,5 +1,5 @@
-import { collect } from '@ember/object/computed';
 import Model from 'ember-data/model';
+import { collect } from '@ember/object/computed';
 import attr from 'ember-data/attr';
 import { hasMany } from 'ember-data/relationships';
 
@@ -15,9 +15,9 @@ export default Model.extend({
   title: attr(),
   gevolg: attr('language-string'),
   onderwerp: attr('language-string'),
-  aanwezigen: hasMany('mandataris', {inverse: null }),
-  onthouders: hasMany('mandataris', {inverse: null }),
-  stemmers: hasMany('mandataris', {inverse: null }),
-  tegenstanders: hasMany('mandataris', {inverse: null }),
-  voorstanders: hasMany('mandataris', {inverse: null })
+  aanwezigen: hasMany('mandataris', { inverse: null }),
+  onthouders: hasMany('mandataris', { inverse: null }),
+  stemmers: hasMany('mandataris', { inverse: null }),
+  tegenstanders: hasMany('mandataris', { inverse: null }),
+  voorstanders: hasMany('mandataris', { inverse: null })
 });

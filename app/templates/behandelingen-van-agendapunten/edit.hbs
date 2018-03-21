@@ -29,14 +29,18 @@
       </tr>
       <tr>
         <td>{{t 'gevolg'}}</td>
-        <td align='middle'>{{edit-language-typed-string data=changeset.gevolg}}</td>
+        <td align='middle'>{{edit-language-typed-string data=model.gevolg}}</td>
       </tr>
+      <tr>
+      <td>afgeleidUit</td>
+      <td align='middle'>{{handle-attribute model=changeset attribute='afgeleidUit' editable=true}}</td>
+</tr>
 
-        <tr><td>vorigeBehandelingVanAgendapunt</td><td align='middle'>{{edit-belongs-to relName=changeset.vorigeBehandelingVanAgendapunt relType="behandeling-van-agendapunt"}}</td></tr>
+        <tr><td>zitting</td><td align='middle'>{{edit-belongs-to relName=changeset.zitting relType="zitting"}}</td></tr>
+      <tr><td>vorigeBehandelingVanAgendapunt</td><td align='middle'>{{edit-belongs-to relName=changeset.vorigeBehandelingVanAgendapunt relType="behandeling-van-agendapunt"}}</td></tr>
       <tr><td>onderwerp</td><td align='middle'>{{edit-belongs-to relName=changeset.onderwerp relType="agendapunt"}}</td></tr>
       <tr><td>secretaris</td><td align='middle'>{{edit-belongs-to relName=changeset.secretaris relType="mandataris"}}</td></tr>
       <tr><td>voorzitter</td><td align='middle'>{{edit-belongs-to relName=changeset.voorzitter relType="mandataris"}}</td></tr>
-      <tr><td>zitting</td><td align='middle'>{{edit-belongs-to relName=changeset.zitting relType="zitting"}}</td></tr>
         <tr><td>besluiten</td><td align='middle'>{{edit-has-many relName=changeset.besluiten relType="besluit"}}</td></tr>
       <tr><td>aanwezigen</td><td align='middle'>{{edit-has-many relName=changeset.aanwezigen relType="mandataris"}}</td></tr>
       <tr><td>stemmingen</td><td align='middle'>{{edit-has-many relName=changeset.stemmingen relType="stemming"}}</td></tr>

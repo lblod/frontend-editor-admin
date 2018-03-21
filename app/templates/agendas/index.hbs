@@ -7,6 +7,8 @@
       <thead>
         <tr>
           <th class="properties__label">id</th>
+          
+
           {{sortable-table-header attribute="zitting" currentSort=sort}}
           {{sortable-table-header attribute="agendapunten" currentSort=sort}}
         </tr>
@@ -14,7 +16,8 @@
       <tbody>
         {{#each model as |item|}}
           {{#link-to "agendas.show" item tagName='tr' }}
-            <td>{{handle-attribute model=item attribute='id' classes='properties__data'}}</td>
+              <td>{{handle-attribute model=item attribute='id' classes='properties__data'}}</td>
+
             {{display-model-belongsto-relationship model=item.zitting tagName='td' itemRoute='zittingen.show' configuredLabel='stringRep'}}
             {{display-model-hasmany-relationship   model=item.agendapunten tagName='td' itemRoute='agendapunten.show' configuredLabel='stringRep'}}
           {{/link-to}}

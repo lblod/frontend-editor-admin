@@ -39,14 +39,19 @@
       <td>opLocatie</td>
       <td align='middle'>{{handle-attribute model=changeset attribute='opLocatie' editable=true}}</td>
 </tr>
+      <tr>
+      <td>afgeleidUit</td>
+      <td align='middle'>{{handle-attribute model=changeset attribute='afgeleidUit' editable=true}}</td>
+</tr>
 
         <tr><td>bestuursorgaan</td><td align='middle'>{{edit-belongs-to relName=changeset.bestuursorgaan relType="bestuursorgaan"}}</td></tr>
       <tr><td>secretaris</td><td align='middle'>{{edit-belongs-to relName=changeset.secretaris relType="mandataris"}}</td></tr>
       <tr><td>voorzitter</td><td align='middle'>{{edit-belongs-to relName=changeset.voorzitter relType="mandataris"}}</td></tr>
-      <tr><td>notulen</td><td align='middle'>{{edit-belongs-to relName=changeset.notulen relType="editor-document"}}</td></tr>
       <tr><td>agenda</td><td align='middle'>{{edit-belongs-to relName=changeset.agenda relType="agenda"}}</td></tr>
-        <tr><td>behandelde agendapunten</td><td align='middle'>{{edit-has-many relName=changeset.behandeldeAgendapunten relType="behandeling-van-agendapunt"}}</td></tr>
-        <tr><td>aanwezigenBijStart</td><td align='middle'>{{edit-has-many relName=changeset.aanwezigenBijStart relType="mandataris"}}</td></tr>
+      <tr><td>notulen</td><td align='middle'>{{edit-belongs-to relName=changeset.notulen relType="editor-document"}}</td></tr>
+        <tr><td>behandeldeAgendapunten</td><td align='middle'>{{edit-has-many relName=changeset.behandeldeAgendapunten relType="behandeling-van-agendapunt"}}</td></tr>
+      <tr><td>aanwezigenBijStart</td><td align='middle'>{{edit-has-many relName=changeset.aanwezigenBijStart relType="mandataris"}}</td></tr>
+
     </tbody>
   </table>
 </div>

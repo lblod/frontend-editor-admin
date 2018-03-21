@@ -26,13 +26,21 @@
         {{handle-attribute model=model attribute='id' tagName='td' classes='properties__data'}}
       </tr>
       {{!-- Creating rows for attributes depending on the type of property --}}
-      <tr>
+            <tr>
         <td>{{t 'openbaar'}}</td>
         <td>{{handle-attribute model=model attribute='openbaar' classes='checkbox' boolean=true}}</td>
       </tr>
       <tr>
         <td>{{t 'gevolg'}}</td>
         {{handle-attribute model=model attribute='gevolg' tagName='td' classes='properties__data'}}
+      </tr>
+      <tr>
+        <td>{{t 'afgeleidUit'}}</td>
+        {{handle-attribute model=model attribute='afgeleidUit' tagName='td' classes='properties__data'}}
+      </tr>
+      <tr>
+        <td class="properties__label">{{t 'zitting'}}</td>
+       {{display-model-belongsto-relationship model=model.zitting itemRoute='zittingen.show' configuredLabel='stringRep' tagName="td" classes="properties__data"}}
       </tr>
       <tr>
         <td class="properties__label">{{t 'vorigeBehandelingVanAgendapunt'}}</td>
@@ -49,10 +57,6 @@
       <tr>
         <td class="properties__label">{{t 'voorzitter'}}</td>
        {{display-model-belongsto-relationship model=model.voorzitter itemRoute='mandatarissen.show' configuredLabel='stringRep' tagName="td" classes="properties__data"}}
-      </tr>
-      <tr>
-        <td class="properties__label">{{t 'zitting'}}</td>
-        {{display-model-belongsto-relationship model=model.zitting itemRoute='zittingen.show' configuredLabel='stringRep' tagName="td" classes="properties__data"}}
       </tr>
       <tr>
         <td class="properties__label">{{t 'besluiten'}}</td>

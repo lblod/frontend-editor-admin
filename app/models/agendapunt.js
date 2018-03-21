@@ -1,19 +1,19 @@
-import { collect } from '@ember/object/computed';
 import Model from 'ember-data/model';
+import { collect } from '@ember/object/computed';
 import attr from 'ember-data/attr';
 import { belongsTo, hasMany } from 'ember-data/relationships';
 
 export default Model.extend({
   // A string representation of this model, based on its attributes.
   // This is what mu-cl-resources uses to search on, and how the model will be presented while editing relationships.
-  stringRep: collect.apply(this,['id', 'titel', 'beschrijving', 'geplandOpenbaar', 'type']),
+  stringRep: collect.apply(this,['id', 'beschrijving', 'geplandOpenbaar', 'heeftOntwerpbesluit', 'titel', 'type']),
 
-  type: attr('string-set'),
   beschrijving: attr(),
   geplandOpenbaar: attr(),
   heeftOntwerpbesluit: attr(),
   titel: attr(),
-  vorigeAgendapunt: belongsTo('agendapunt', {inverse: null }),
-  referenties: hasMany('agendapunt', {inverse: null }),
-  agenda: belongsTo('agenda', {inverse: null })
+  type: attr('uri-set'),
+  vorigeAgendapunt: belongsTo('agendapunt', { inverse: null }),
+  agenda: belongsTo('agenda', { inverse: 'agendapunten' }),
+  referenties: hasMany('agendapunt', { inverse: null })
 });

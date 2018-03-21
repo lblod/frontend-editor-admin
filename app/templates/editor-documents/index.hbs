@@ -8,32 +8,34 @@
         <tr>
           <th class="properties__label">id</th>
           {{sortable-table-header attribute="title" currentSort=sort}}
-          {{sortable-table-header attribute="content" currentSort=sort}}
-          {{sortable-table-header attribute="context" currentSort=sort}}
-          {{sortable-table-header attribute="createdOn" currentSort=sort}}
-          {{sortable-table-header attribute="starred" currentSort=sort}}
-          {{sortable-table-header attribute="origin" currentSort=sort}}
+{{sortable-table-header attribute="content" currentSort=sort}}
+{{sortable-table-header attribute="context" currentSort=sort}}
+{{sortable-table-header attribute="createdOn" currentSort=sort}}
+{{sortable-table-header attribute="starred" currentSort=sort}}
+{{sortable-table-header attribute="origin" currentSort=sort}}
 
           {{sortable-table-header attribute="status" currentSort=sort}}
-          {{sortable-table-header attribute="previousVersion" currentSort=sort}}
-          {{sortable-table-header attribute="nextVersion" currentSort=sort}}
-          {{sortable-table-header attribute="zitting" currentSort=sort}}
+{{sortable-table-header attribute="previousVersion" currentSort=sort}}
+{{sortable-table-header attribute="nextVersion" currentSort=sort}}
+{{sortable-table-header attribute="zitting" currentSort=sort}}
+          
         </tr>
       </thead>
       <tbody>
         {{#each model as |item|}}
           {{#link-to "editor-documents.show" item tagName='tr' }}
-            <td>{{handle-attribute model=item attribute='id' classes='properties__data'}}</td>
+              <td>{{handle-attribute model=item attribute='id' classes='properties__data'}}</td>
             {{handle-attribute model=item attribute='title' tagName='td' classes='properties__data'}}
             {{handle-attribute model=item attribute='content' tagName='td' classes='properties__data'}}
             {{handle-attribute model=item attribute='context' tagName='td' classes='properties__data'}}
-            {{handle-date model=item attribute='createdOn' tagName='td' classes='properties__data' timePicker=true}}
-            <td>{{handle-attribute model=item attribute='starred' classes='checkbox' boolean=true}}</td>
+        {{handle-date model=item attribute='createdOn' tagName='td' classes='properties__data' timePicker=true}}
+        <td>{{handle-attribute model=item attribute='starred' classes='checkbox' boolean=true}}</td>
             {{handle-attribute model=item attribute='origin' tagName='td' classes='properties__data'}}
             {{display-model-belongsto-relationship model=item.status tagName='td' itemRoute='editor-document-statuses.show' configuredLabel='stringRep'}}
             {{display-model-belongsto-relationship model=item.previousVersion tagName='td' itemRoute='editor-documents.show' configuredLabel='stringRep'}}
             {{display-model-belongsto-relationship model=item.nextVersion tagName='td' itemRoute='editor-documents.show' configuredLabel='stringRep'}}
             {{display-model-belongsto-relationship model=item.zitting tagName='td' itemRoute='zittingen.show' configuredLabel='stringRep'}}
+
           {{/link-to}}
         {{/each}}
       </tbody>

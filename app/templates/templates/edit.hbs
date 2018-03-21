@@ -36,16 +36,16 @@
         <td align='middle'>{{textarea value=changeset.body placeholder='body' rows=6 cols=80}}</td>
       </tr>
       <tr>
-        <td>{{t 'contexts'}}</td>
-        <td align='middle'>{{edit-string-set data=changeset.contexts tagName='ul' classes='string-set'}}</td>
+      <td>contexts</td>
+      <td align='middle'>{{handle-attribute model=changeset attribute='contexts' editable=true}}</td>
 </tr>
       <tr>
-        <td>disabledInContexts</td>
-        <td align='middle'>{{edit-string-set data=changeset.disabledInContexts tagName='ul' classes='string-set'}}</td>
+      <td>disabledInContexts</td>
+      <td align='middle'>{{handle-attribute model=changeset attribute='disabledInContexts' editable=true}}</td>
 </tr>
 
-
-
+        
+        
 
     </tbody>
   </table>

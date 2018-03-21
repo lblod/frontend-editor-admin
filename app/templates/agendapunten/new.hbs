@@ -41,8 +41,8 @@
         <td>{{t 'type'}}</td>
         <td align='middle'>{{edit-string-set data=model.type tagName='ul' classes='string-set'}}</td>
       </tr>
-      <tr><td>agenda</td><td align='middle'>{{edit-belongs-to relName=model.agenda relType="agenda"}}</td></tr>
       <tr><td>vorigeAgendapunt</td><td align='middle'>{{edit-belongs-to relName=model.vorigeAgendapunt relType="agendapunt"}}</td></tr>
+      <tr><td>agenda</td><td align='middle'>{{edit-belongs-to relName=model.agenda relType="agenda"}}</td></tr>
       <tr><td>referenties</td><td align='middle'>{{edit-has-many relName=model.referenties relType="agendapunt"}}</td></tr>
     </tbody>
   </table>

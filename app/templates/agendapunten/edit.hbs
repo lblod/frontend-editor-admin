@@ -40,12 +40,13 @@
       <td align='middle'>{{handle-attribute model=changeset attribute='titel' editable=true}}</td>
 </tr>
       <tr>
-        <td>{{t 'type'}}</td>
-        <td align='middle'>{{edit-string-set data=changeset.type tagName='ul' classes='string-set'}}</td>
-      </tr>
+      <td>type</td>
+      <td align='middle'>{{handle-attribute model=changeset attribute='type' editable=true}}</td>
+</tr>
+
+        <tr><td>vorigeAgendapunt</td><td align='middle'>{{edit-belongs-to relName=changeset.vorigeAgendapunt relType="agendapunt"}}</td></tr>
       <tr><td>agenda</td><td align='middle'>{{edit-belongs-to relName=changeset.agenda relType="agenda"}}</td></tr>
-      <tr><td>vorigeAgendapunt</td><td align='middle'>{{edit-belongs-to relName=changeset.vorigeAgendapunt relType="agendapunt"}}</td></tr>
-      <tr><td>referenties</td><td align='middle'>{{edit-has-many relName=changeset.referenties relType="agendapunt"}}</td></tr>
+        <tr><td>referenties</td><td align='middle'>{{edit-has-many relName=changeset.referenties relType="agendapunt"}}</td></tr>
 
     </tbody>
   </table>

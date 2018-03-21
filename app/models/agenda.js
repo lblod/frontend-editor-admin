@@ -1,5 +1,5 @@
-import { collect } from '@ember/object/computed';
 import Model from 'ember-data/model';
+import { collect } from '@ember/object/computed';
 import { belongsTo, hasMany } from 'ember-data/relationships';
 
 export default Model.extend({
@@ -7,6 +7,6 @@ export default Model.extend({
   // This is what mu-cl-resources uses to search on, and how the model will be presented while editing relationships.
   stringRep: collect.apply(this,['id']),
 
-  zitting: belongsTo('zitting', { inverse: null }),
-  agendapunten: hasMany('agendapunt', { inverse: null })
+  zitting: belongsTo('zitting', { inverse: 'agenda' }),
+  agendapunten: hasMany('agendapunt', { inverse: 'agenda' })
 });

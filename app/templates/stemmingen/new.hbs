@@ -21,17 +21,17 @@
     </thead>
     <tbody>
       {{!-- Creating rows for attributes depending on the type of property --}}
-      <tr>
+            <tr>
         <td>aantalOnthouders</td>
-        <td align='middle'>{{handle-attribute model=model attribute='aantalOnthouders' editable=true}}</td>
+<td align='middle'>{{handle-attribute model=model attribute='aantalOnthouders' editable=true}}</td>
       </tr>
       <tr>
         <td>aantalTegenstanders</td>
-        <td align='middle'>{{handle-attribute model=model attribute='aantalTegenstanders' editable=true}}</td>
+<td align='middle'>{{handle-attribute model=model attribute='aantalTegenstanders' editable=true}}</td>
       </tr>
       <tr>
         <td>aantalVoorstanders</td>
-        <td align='middle'>{{handle-attribute model=model attribute='aantalVoorstanders' editable=true}}</td>
+<td align='middle'>{{handle-attribute model=model attribute='aantalVoorstanders' editable=true}}</td>
       </tr>
       <tr>
         <td>{{t 'geheim'}}</td>
@@ -39,7 +39,7 @@
       </tr>
       <tr>
         <td>title</td>
-        <td align='middle'>{{handle-attribute model=model attribute='title' editable=true}}</td>
+<td align='middle'>{{handle-attribute model=model attribute='title' editable=true}}</td>
       </tr>
       <tr>
         <td>{{t 'gevolg'}}</td>
@@ -49,7 +49,7 @@
         <td>{{t 'onderwerp'}}</td>
         <td align='middle'>{{edit-language-typed-string data=model.onderwerp}}</td>
       </tr>
-
+      
       <tr><td>aanwezigen</td><td align='middle'>{{edit-has-many relName=model.aanwezigen relType="mandataris"}}</td></tr>
       <tr><td>onthouders</td><td align='middle'>{{edit-has-many relName=model.onthouders relType="mandataris"}}</td></tr>
       <tr><td>stemmers</td><td align='middle'>{{edit-has-many relName=model.stemmers relType="mandataris"}}</td></tr>

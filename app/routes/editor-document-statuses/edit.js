@@ -1,5 +1,5 @@
-import Route from '@ember/routing/route';
 import { inject } from '@ember/service';
+import Route from '@ember/routing/route';
 
 export default Route.extend({
   store: inject(),

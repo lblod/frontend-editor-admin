@@ -37,12 +37,16 @@
         <td>opLocatie</td>
 <td align='middle'>{{handle-attribute model=model attribute='opLocatie' editable=true}}</td>
       </tr>
+      <tr>
+        <td>afgeleidUit</td>
+<td align='middle'>{{handle-attribute model=model attribute='afgeleidUit' editable=true}}</td>
+      </tr>
       <tr><td>bestuursorgaan</td><td align='middle'>{{edit-belongs-to relName=model.bestuursorgaan relType="bestuursorgaan"}}</td></tr>
       <tr><td>secretaris</td><td align='middle'>{{edit-belongs-to relName=model.secretaris relType="mandataris"}}</td></tr>
       <tr><td>voorzitter</td><td align='middle'>{{edit-belongs-to relName=model.voorzitter relType="mandataris"}}</td></tr>
-      <tr><td>notulen</td><td align='middle'>{{edit-belongs-to relName=model.notulen relType="editor-document"}}</td></tr>
       <tr><td>agenda</td><td align='middle'>{{edit-belongs-to relName=model.agenda relType="agenda"}}</td></tr>
-      <tr><td>behandelde agendapunten</td><td align='middle'>{{edit-has-many relName=model.behandeldeAgendapunten relType="behandeling-van-agendapunt"}}</td></tr>
+      <tr><td>notulen</td><td align='middle'>{{edit-belongs-to relName=model.notulen relType="editor-document"}}</td></tr>
+      <tr><td>behandeldeAgendapunten</td><td align='middle'>{{edit-has-many relName=model.behandeldeAgendapunten relType="behandeling-van-agendapunt"}}</td></tr>
       <tr><td>aanwezigenBijStart</td><td align='middle'>{{edit-has-many relName=model.aanwezigenBijStart relType="mandataris"}}</td></tr>
     </tbody>
   </table>

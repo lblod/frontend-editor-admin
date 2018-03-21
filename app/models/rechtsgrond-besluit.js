@@ -1,5 +1,5 @@
-import { collect } from '@ember/object/computed';
 import Model from 'ember-data/model';
+import { collect } from '@ember/object/computed';
 import attr from 'ember-data/attr';
 import { belongsTo, hasMany } from 'ember-data/relationships';
 
@@ -10,6 +10,6 @@ export default Model.extend({
 
   buitenwerkingtreding: attr('date'),
   inwerkingtreding: attr('date'),
-  bestuursorgaan: belongsTo('bestuursorgaan', {inverse: null }),
-  rechtsgrondenArtikel: hasMany('rechtsgrond-artikel', {inverse: 'rechtsgrondBesluit'})
+  bestuursorgaan: belongsTo('bestuursorgaan', { inverse: null }),
+  rechtsgrondenArtikel: hasMany('rechtsgrond-artikel', { inverse: 'rechtsgrondBesluit' })
 });

@@ -2,6 +2,7 @@ import { computed } from '@ember/object';
 import { inject } from '@ember/service';
 import Component from '@ember/component';
 import layout from '../templates/components/navigation-menu';
+import { getOwner } from '@ember/application';
 
 /*
   This component created a menu for your routes.
@@ -17,49 +18,26 @@ export default Component.extend({
   layout: layout,
   tagName: 'div',
   currentRoute: '',
-  router: inject(),
+  router: inject('router'),
 
   menus: computed(function() {
-    const routeKeys = [
-      'agendas',
-      'agendapunten',
-      'artikels',
-      'behandelingen-van-agendapunten',
-      'besluiten',
-      'bestuurseenheden',
-      'bestuursorganen',
-      'editor-documents',
-      'editor-document-statuses',
-      'entiteiten',
-      'fracties',
-      'geboortes',
-      'identificatoren',
-      'kandidatenlijsten',
-      'lidmaatschappen',
-      'lijsttypes',
-      'mandatarissen',
-      'mandaten',
-      'personen',
-      'rechtsgronden',
-      'rechtsgronden-aanstelling',
-      'rechtsgronden-artikel',
-      'rechtsgronden-beeindiging',
-      'rechtsgronden-besluit',
-      'rechtstreekse-verkiezingen',
-      'stemmingen',
-      'templates',
-      'tijdsgebonden-entiteiten',
-      'tijdsintervallen',
-      'verkiezingsresultaten',
-      'zittingen'
-    ];
-    return routeKeys.uniq().sort();
+    let router = getOwner(this).lookup('router:main');
+    let allRoutesList = router.get('currentState.routerJs.recognizer.names');
+    let routeKeys = Object.keys(allRoutesList);
+    let filteredKeys = routeKeys.filter(function(item) {
+      return item.indexOf('.index') >= 0;
+    });
+
+    filteredKeys = filteredKeys.map(function(item) {
+      return item.split('.index')[0];
+    });
+    return filteredKeys.uniq().sort();
   }),
 
   actions: {
     goToPage: function(item) {
       this.set('currentRoute', item);
-      this.get('router').transitionTo(item);
+      this.get("router").transitionTo(item);
     }
   }
 });

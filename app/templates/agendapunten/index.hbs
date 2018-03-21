@@ -8,12 +8,13 @@
         <tr>
           <th class="properties__label">id</th>
           {{sortable-table-header attribute="beschrijving" currentSort=sort}}
-          {{sortable-table-header attribute="geplandOpenbaar" currentSort=sort}}
-          {{sortable-table-header attribute="heeftOntwerpbesluit" currentSort=sort}}
-          {{sortable-table-header attribute="titel" currentSort=sort}}
-          {{sortable-table-header attribute="type" currentSort=sort}}
-          {{sortable-table-header attribute="agenda" currentSort=sort}}
+{{sortable-table-header attribute="geplandOpenbaar" currentSort=sort}}
+{{sortable-table-header attribute="heeftOntwerpbesluit" currentSort=sort}}
+{{sortable-table-header attribute="titel" currentSort=sort}}
+{{sortable-table-header attribute="type" currentSort=sort}}
+
           {{sortable-table-header attribute="vorigeAgendapunt" currentSort=sort}}
+{{sortable-table-header attribute="agenda" currentSort=sort}}
           {{sortable-table-header attribute="referenties" currentSort=sort}}
         </tr>
       </thead>
@@ -26,8 +27,8 @@
             {{handle-attribute model=item attribute='heeftOntwerpbesluit' tagName='td' classes='properties__data'}}
             {{handle-attribute model=item attribute='titel' tagName='td' classes='properties__data'}}
             <td>{{display-attribute-string-set model=item attribute='type' tagName='ul' innerTagName='li' classes='string-set'}}</td>
-            {{display-model-belongsto-relationship model=item.agenda tagName='td' itemRoute='agendas.show' configuredLabel='stringRep'}}
             {{display-model-belongsto-relationship model=item.vorigeAgendapunt tagName='td' itemRoute='agendapunten.show' configuredLabel='stringRep'}}
+            {{display-model-belongsto-relationship model=item.agenda tagName='td' itemRoute='agendas.show' configuredLabel='stringRep'}}
             {{display-model-hasmany-relationship   model=item.referenties tagName='td' itemRoute='agendapunten.show' configuredLabel='stringRep'}}
           {{/link-to}}
         {{/each}}

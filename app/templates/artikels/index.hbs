@@ -11,6 +11,8 @@
 {{sortable-table-header attribute="inhoud" currentSort=sort}}
 {{sortable-table-header attribute="taal" currentSort=sort}}
 {{sortable-table-header attribute="titel" currentSort=sort}}
+{{sortable-table-header attribute="page" currentSort=sort}}
+{{sortable-table-header attribute="score" currentSort=sort}}
 
           {{sortable-table-header attribute="realisatie" currentSort=sort}}
           
@@ -24,6 +26,8 @@
             {{handle-attribute model=item attribute='inhoud' tagName='td' classes='properties__data'}}
             {{handle-attribute model=item attribute='taal' tagName='td' classes='properties__data'}}
             {{handle-attribute model=item attribute='titel' tagName='td' classes='properties__data'}}
+            {{handle-attribute model=item attribute='page' tagName='td' classes='properties__data'}}
+            {{handle-attribute model=item attribute='score' tagName='td' classes='properties__data'}}
             {{display-model-belongsto-relationship model=item.realisatie tagName='td' itemRoute='rechtsgronden-artikel.show' configuredLabel='stringRep'}}
 
           {{/link-to}}

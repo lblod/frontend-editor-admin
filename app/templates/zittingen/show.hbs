@@ -43,6 +43,10 @@
         {{handle-attribute model=model attribute='opLocatie' tagName='td' classes='properties__data'}}
       </tr>
       <tr>
+        <td>{{t 'afgeleidUit'}}</td>
+        {{handle-attribute model=model attribute='afgeleidUit' tagName='td' classes='properties__data'}}
+      </tr>
+      <tr>
         <td class="properties__label">{{t 'bestuursorgaan'}}</td>
        {{display-model-belongsto-relationship model=model.bestuursorgaan itemRoute='bestuursorganen.show' configuredLabel='stringRep' tagName="td" classes="properties__data"}}
       </tr>
@@ -55,15 +59,15 @@
        {{display-model-belongsto-relationship model=model.voorzitter itemRoute='mandatarissen.show' configuredLabel='stringRep' tagName="td" classes="properties__data"}}
       </tr>
       <tr>
-        <td class="properties__label">{{t 'notulen'}}</td>
-        {{display-model-belongsto-relationship model=model.notulen itemRoute='editor-documents.show' configuredLabel='stringRep' tagName="td" classes="properties__data"}}
-      </tr>
-      <tr>
         <td class="properties__label">{{t 'agenda'}}</td>
-        {{display-model-belongsto-relationship model=model.agenda itemRoute='agendas.show' configuredLabel='stringRep' tagName="td" classes="properties__data"}}
+       {{display-model-belongsto-relationship model=model.agenda itemRoute='agendas.show' configuredLabel='stringRep' tagName="td" classes="properties__data"}}
       </tr>
       <tr>
-        <td class="properties__label">{{t 'behandeleldeAgendapunten'}}</td>
+        <td class="properties__label">{{t 'notulen'}}</td>
+       {{display-model-belongsto-relationship model=model.notulen itemRoute='editor-documents.show' configuredLabel='stringRep' tagName="td" classes="properties__data"}}
+      </tr>
+      <tr>
+        <td class="properties__label">{{t 'behandeldeAgendapunten'}}</td>
        {{display-model-hasmany-relationship   model=model.behandeldeAgendapunten itemRoute='behandelingen-van-agendapunten.show' configuredLabel='stringRep' tagName="td" classes="properties__data"}}
       </tr>
       <tr>

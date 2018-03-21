@@ -15,7 +15,7 @@
 {{sortable-table-header attribute="gevolg" currentSort=sort}}
 {{sortable-table-header attribute="onderwerp" currentSort=sort}}
 
-
+          
           {{sortable-table-header attribute="aanwezigen" currentSort=sort}}
 {{sortable-table-header attribute="onthouders" currentSort=sort}}
 {{sortable-table-header attribute="stemmers" currentSort=sort}}
@@ -31,9 +31,9 @@
             {{handle-attribute model=item attribute='aantalTegenstanders' tagName='td' classes='properties__data'}}
             {{handle-attribute model=item attribute='aantalVoorstanders' tagName='td' classes='properties__data'}}
         <td>{{handle-attribute model=item attribute='geheim' classes='checkbox' boolean=true}}</td>
-        {{handle-attribute model=item attribute='title' tagName='td' classes='properties__data'}}
-        {{handle-attribute model=item attribute='gevolg' tagName='td' classes='properties__data'}}
-        {{handle-attribute model=item attribute='onderwerp' tagName='td' classes='properties__data'}}
+            {{handle-attribute model=item attribute='title' tagName='td' classes='properties__data'}}
+            {{handle-attribute model=item attribute='gevolg' tagName='td' classes='properties__data'}}
+            {{handle-attribute model=item attribute='onderwerp' tagName='td' classes='properties__data'}}
 
             {{display-model-hasmany-relationship   model=item.aanwezigen tagName='td' itemRoute='mandatarissen.show' configuredLabel='stringRep'}}
             {{display-model-hasmany-relationship   model=item.onthouders tagName='td' itemRoute='mandatarissen.show' configuredLabel='stringRep'}}

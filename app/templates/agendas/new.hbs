@@ -2,6 +2,10 @@
 <div class="new">
   <h2 class="title">{{t (humanize 'New agenda')}}</h2>
 
+  {{!--
+    Actions to save new agenda
+    or delete new agenda.
+  --}}
   <div class="actions">
     <button type="button" class="btn save" title="Save new agenda" {{action 'save' model}}>Save</button>
     <button type="button" class="btn cancel" title="Cancel" {{action 'cancel' model}}>Cancel</button>
@@ -16,6 +20,8 @@
       </tr>
     </thead>
     <tbody>
+      {{!-- Creating rows for attributes depending on the type of property --}}
+      
       <tr><td>zitting</td><td align='middle'>{{edit-belongs-to relName=model.zitting relType="zitting"}}</td></tr>
       <tr><td>agendapunten</td><td align='middle'>{{edit-has-many relName=model.agendapunten relType="agendapunt"}}</td></tr>
     </tbody>

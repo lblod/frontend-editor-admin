@@ -10,6 +10,6 @@ export default Model.extend({
   title: attr(),
   matches: attr('string-set'),
   body: attr(),
-  contexts: attr('uri-set'),
-  disabledInContexts: attr('uri-set')
+  contexts: attr('string-set'),
+  disabledInContexts: attr('string-set')
 });

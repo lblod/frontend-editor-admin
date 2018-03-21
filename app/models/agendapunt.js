@@ -12,7 +12,7 @@ export default Model.extend({
   geplandOpenbaar: attr(),
   heeftOntwerpbesluit: attr(),
   titel: attr(),
-  type: attr('uri-set'),
+  type: attr('string-set'),
   vorigeAgendapunt: belongsTo('agendapunt', { inverse: null }),
   agenda: belongsTo('agenda', { inverse: 'agendapunten' }),
   referenties: hasMany('agendapunt', { inverse: null })

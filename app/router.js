@@ -451,16 +451,6 @@ Router.map(function() {
       path: ':id/edit'
     });
   });
-  this.route('editor-document-statussen', function() {
-    this.route('show', {
-      path: ':id'
-    });
-    this.route('new');
-
-    this.route('edit', {
-      path: ':id/edit'
-    });
-  });
 });
 
 export default Router;

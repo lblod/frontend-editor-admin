@@ -11,5 +11,5 @@ export default Model.extend({
   naam: attr(),
   primaireSite: belongsTo('vestiging', { inverse: null }),
   contactinfo: hasMany('contact-punt', { inverse: null }),
-  posities: hasMany('positie', { inverse: null })
+  posities: hasMany('positie', { inverse: 'isPositieIn' })
 });

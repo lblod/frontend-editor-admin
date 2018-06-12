@@ -1,7 +1,7 @@
 import Model from 'ember-data/model';
 import { collect } from '@ember/object/computed';
 import attr from 'ember-data/attr';
-import { belongsTo } from 'ember-data/relationships';
+import { belongsTo, hasMany } from 'ember-data/relationships';
 
 export default Model.extend({
   // A string representation of this model, based on its attributes.
@@ -10,5 +10,5 @@ export default Model.extend({
 
   aantalHouders: attr(),
   bestuursfunctie: belongsTo('bestuursfunctie-code', { inverse: null }),
-  bevatIn: belongsTo('bestuursorgaan', { inverse: 'bevat' })
+  bevatIn: hasMany('bestuursorgaan', { inverse: 'bevat' })
 });
